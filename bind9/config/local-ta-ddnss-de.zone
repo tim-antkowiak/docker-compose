@@ -1,0 +1,22 @@
+$TTL 2d
+
+$ORIGIN local.ta.ddnss.de.
+
+@                   IN        SOA     ns.local.ta.ddnss.de. tim.ta.ddnss.de. (
+                                      2024072000          ;serial
+                                      12h                 ;refresh
+                                      15m                 ;retry
+                                      3w                  ;expire
+                                      2h                  ;minimum
+                                      )
+
+                    IN        NS      ns.local.ta.ddnss.de.
+
+ns                  IN        A       192.168.178.11
+
+; -- dns records
+
+dockerhost00        IN        A       192.168.178.11
+gameserver01        IN        A       192.168.178.12
+
+*                   IN        A       192.168.178.11
