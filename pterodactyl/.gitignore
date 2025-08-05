@@ -1,0 +1,6 @@
+# Ignore mounted folders and secrets
+database/
+var/
+nginx/
+certs/
+logs/

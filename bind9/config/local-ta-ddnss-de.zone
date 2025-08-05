@@ -16,6 +16,7 @@ ns                  IN        A       192.168.178.11
 
 ; -- dns records
 
+proxmox01	          IN        A       192.168.178.10
 dockerhost00        IN        A       192.168.178.11
 gameserver01        IN        A       192.168.178.12
 

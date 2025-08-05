@@ -1,0 +1,31 @@
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:2.1.0
+    container_name: duplicati
+    environment:
+      PUID: 0
+      PGID: 0
+      TZ: 'Europe/Berlin'
+      SETTINGS_ENCRYPTION_KEY: /run/secrets/duplicati-encryption-key
+    secrets:
+      - duplicati-encryption-key
+      - web-password
+    volumes:
+      - ./config:/config
+      - ./backups:/backups
+      - /srv/docker-compose:/source/docker-compose
+    ports:
+      - 8200:8200
+    restart: unless-stopped
+    networks:
+      - frontend
+
+secrets:
+  duplicati-encryption-key:
+    file: ./secrets/duplicati-encryption-key.txt
+  web-password:
+    file: ./secrets/web-password.txt
+
+networks:
+  frontend:
+    external: true

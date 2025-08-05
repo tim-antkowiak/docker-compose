@@ -1,0 +1,3 @@
+# Ignore mounted folders and secrets
+data/
+letsencrypt-certificates/

@@ -1,0 +1,4 @@
+# Ignore mounted folders and secrets
+config/
+backups/
+secrets/
